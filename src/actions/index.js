@@ -9,6 +9,8 @@ import {
   EDIT_STREAM
 } from "./types";
 
+import history from "../history";
+
 export const signIn = userId => ({ type: SIGN_IN, payload: userId });
 
 export const signOut = () => ({ type: SIGN_OUT });
@@ -19,6 +21,7 @@ export const createStream = formValues => async (dispatch, getState) => {
 
   dispatch({ type: CREATE_STREAM, payload: response.data });
   //create success: redirect user to home route
+  history.push("/");
 };
 
 export const fetchStreams = () => async dispatch => {
