@@ -29,7 +29,7 @@ export default (state = {}, action) => {
     case DELETE_STREAM:
       // const { payload.id, ...newStream } = state;
       // return newStream;
-      return _.omit(state, payload.id);
+      return _.omit(state, payload);
 
     default:
       return state;
